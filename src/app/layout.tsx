@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Bricolage_Grotesque, Oswald } from "next/font/google";
 import "./globals.css";
+import { cn } from "./lib/utils";
+import GrainEffect from "@/components/visualEffects/grain-effect";
+
+const MainFont = Bricolage_Grotesque({
+  subsets: ["latin"],
+});
+
+const OswaldFont = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +36,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={ 
+          cn(
+            geistSans.variable, 
+            geistMono.variable, 
+            MainFont.className, 
+            OswaldFont.variable
+          )
+        }
       >
+        <GrainEffect />
         {children}
       </body>
     </html>
