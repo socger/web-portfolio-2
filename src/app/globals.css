@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
+  --background: #000;
+  
   --foreground: #171717;
   --bg-grain: url(/assets/images/background/noisy-background.png);
-  --noise-texture: url(/noise.png); /* Modificado: eliminado "public" de la ruta */
+  --noise-texture: url(/assets/images/background/noise.png);
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -83,7 +85,10 @@
     bottom: -200%;
     background-image: var(--noise-texture);
     background-repeat: repeat;
-    opacity: 0.4;
+
+    /* opacity aprox to 1 is dark, to 9 is not dark (light) */
+    opacity: 0.27;
+
     pointer-events: none;
     animation: noise-animation 0.6s steps(3) infinite;
     z-index: -1;
