@@ -1,9 +1,12 @@
+"use client";
+
+import WaterWaveWrapper from "@/components/visualEffects/WaterWaveWrapper";
 import { cn } from "../lib/utils";
 
 export default function Home() {
   return (
 
-    <div>
+    <div className="p-32">
       <h1 className={cn("text-4xl", "text-center")}>
         Hello my friends
       </h1>
@@ -11,6 +14,24 @@ export default function Home() {
       <h1 className={cn("text-4xl text-center font-oswald")}>
         Hello my friends
       </h1>
+
+      <div 
+        className="mt-3 text-white text-2xl bg-red-500 link"
+      > 
+        Hover her
+      </div>
+
+      <WaterWaveWrapper
+        imageUrl=""
+        dropRadius="3"
+        perturbance="3"
+        resolution="2048"
+      >
+        {
+          () => <div className="h-screen"></div>
+        }
+      </WaterWaveWrapper>
+
     </div>
 
 
