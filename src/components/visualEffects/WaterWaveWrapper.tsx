@@ -1,7 +1,10 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import WaterWave from "react-water-wave";
+import dynamic from "next/dynamic";
+
+// Carga dinámica del paquete react-water-wave
+const WaterWave = dynamic(() => import("react-water-wave"), { ssr: false });
 
 interface WaterWaveWrapperProps {
   imageUrl: string;
