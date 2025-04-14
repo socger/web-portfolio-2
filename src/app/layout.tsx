@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Bricolage_Grotesque, Oswald } from "next/font/google
 import "./globals.css";
 import { cn } from "../lib/utils";
 import GrainEffect from "@/components/visualEffects/GrainEffect";
+import Cursor from "@/components/cursor/Cursor";
 
 const MainFont = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
         }
       >
         <GrainEffect />
+        <Cursor color="#fff" />
         {children}
       </body>
     </html>
