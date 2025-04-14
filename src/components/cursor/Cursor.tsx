@@ -20,6 +20,22 @@ const Cursor: FC<CursorProps> = ({color}) => {
       outerStyle={{
         border: `1px solid ${color}`,
       }}
+      clickables={[
+        'a',
+        'button',
+        'select',
+        'input',
+        // 'input[type="text"]',
+        // 'input[type="email"]',
+        // 'input[type="number"]',
+        // 'input[type="submit"]',
+        // 'input[type="image"]',
+        '.link',
+        // 'h1',
+
+        // 'label[for]',
+        // 'textarea'
+      ]}
     />
   );
 };
